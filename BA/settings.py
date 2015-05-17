@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'OWL',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,6 +98,20 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+# https://docs.djangoproject.com/en/1.7/howto/static-files/
+def map_path(directory_name):
+    return os.path.join(os.path.dirname(__file__),
+        '../' + directory_name).replace('\\', '/')
+STATIC_ROOT = map_path('static')
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (map_path('static-assets'),)
+
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIRS = [
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    TEMPLATE_PATH,
+    '/home/nlittlepoole/Applications/BA/templates',
+]
