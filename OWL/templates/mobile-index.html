@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Sander's Army</title>
+          <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <style>
+BODY { background: url(http://kdreps.com/blog/wp-content/uploads/2013/09/Screen-Shot-2013-09-04-at-11.37.21-PM.png) fixed }
+
+
+      * {
+  border-radius: 0 !important;
+}
+.white {
+      color: white;
+
+  }
+
+  /* do not group these rules */
+.form-control::-webkit-input-placeholder { color: white; }
+.form-control:-moz-placeholder { color: white; }
+.form-control::-moz-placeholder { color: white; }
+.form-control:-ms-input-placeholder { color: white; }
+    select option { color: black; }
+  </style>
+    </head>
+    <body>
+
+
+<div class="container" style="">
+  <h2 style="text-shadow: -1px 0 #097fd7, 0 1px #097fd7, 1px 0 #097fd7, 0 -1px #097fd7;"><font color="white">Sander's Wants You!</font></h2>
+  <form role="form" action="signup" method="post">
+  {% csrf_token %}
+    <div class="form-group; ">
+<input type="tel" name="phone" class="form-control input-lg" id="phone" placeholder="Enter Mobile Phone #" style="background-color: rgba(255,255,255,0.1);border:0; border-bottom: 3px solid #fff;">
+    </div>
+    <br>
+    <div class="form-group">
+<input  type="number" min="0"  data-bind="value:replyNumber" name="zip_code" class="form-control input-lg" id="zip_code" placeholder="Enter Primary Zip Code" style="background-color: rgba(255,255,255,0.1);border:0; border-bottom: 3px solid #fff;">
+    </div>
+    <div class="form-group">
+    <select name="carrier" class="form-control input-lg" id="carrier" placeholder="Enter Phone Carrier" style="background-color: rgba(255,255,255,0.4);border:0; border-bottom: 3px solid #fff;">
+  <option value="AT&T" ><p style="color:#FF00p bo55;">AT&T</option>
+  <option value="Boost">Verizon</option>
+  <option value="Cricket">Verizon</option>
+  <option value="Metro PCS">Verizon</option>
+  <option value="Sprint">Sprint</option>
+  <option value="T-Mobile">T-Mobile</option>
+  <option value="US Cellular">US Cellular</option>
+  <option value="Virgin Mobile">Virgin Mobile</option>
+  <option value="Verizon">Verizon</option>
+</select>
+    </div>
+
+    <button type="submit" class="btn btn-danger btn-lg" >Enlist</button>
+  </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Test
+    </body>
+</html>

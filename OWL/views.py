@@ -9,7 +9,10 @@ def index(request):
     #urls = tweets.search_for_links(query) if not validate(query) else tweets.adjacent_links(query)
     #context_dict = {'boldmessage': query + ":",'urls':urls}
     context_dict = {}
-    return render(request, 'index.html', context_dict)
+    if request.mobile:
+        return render(request, 'mobile-index.html', context_dict)
+    else:
+        return render(request, 'index.html', context_dict)
     
 def signup(request):
     phone  = request.POST.get("phone","")
@@ -45,3 +48,11 @@ def activate(request):
         context_dict = {}
         return render(request, 'success.html', context_dict)
 # Create your views here.
+def command(request):
+    #query = request.GET.get('q', '')
+    #query = "HN" if query=='' else query
+    #print validate(query)
+    #urls = tweets.search_for_links(query) if not validate(query) else tweets.adjacent_links(query)
+    #context_dict = {'boldmessage': query + ":",'urls':urls}
+    context_dict = {}
+    return render(request, 'command.html', context_dict)
