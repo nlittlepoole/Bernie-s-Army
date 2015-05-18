@@ -1,2 +1,4 @@
 *.pyc
 BA/wsgi.py
+BA/settings.py
+db.sqlite3
