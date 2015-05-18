@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Welcome to the Army</title>
+          <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+<div class="container">
+  <h2 ><font color="#097fd7">Enter Code Texted to you to Activate Enlistment</font></h2>
+  {% if fail %}
+  <h3 ><font color="red">Incorrect Code Entered</font></h3>
+  {% endif %}
+  <form role="form" action="activate" method="post">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="code"><font color="#097fd7">Code</font></label>
+      <input  type="number" min="0"  data-bind="value:replyNumber" name="code" class="form-control" id="code" placeholder="Enter Code">
+    </div>
+    <button type="submit" class="btn btn-danger">Activate</button>
+  </form>
+</div>
+    </body>
+</html>

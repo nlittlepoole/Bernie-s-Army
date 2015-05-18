@@ -6,33 +6,56 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <style>
+      * {
+  border-radius: 0 !important;
+}
+.white {
+      color: white;
+
+  }
+
+  /* do not group these rules */
+.form-control::-webkit-input-placeholder { color: white; }
+.form-control:-moz-placeholder { color: white; }
+.form-control::-moz-placeholder { color: white; }
+.form-control:-ms-input-placeholder { color: white; }
+    select option { color: black; }
+  </style>
     </head>
     <body>
 <div style="position: fixed; z-index: -99; width: 100%; height: 100%;">
   <iframe frameborder="0" height="100%" width="100%" 
-    src="https://youtube.com/embed/C7L9V7oGRv8?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1">
+    src="https://youtube.com/embed/C7L9V7oGRv8?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=C7L9V7oGRv8">
   </iframe>
 </div>
 <div class="container" style="margin:0px 50% 0px 30%; padding:0px;
-	text-align:center; display: inline-block;  bottom: 20; position:absolute;width: 40%;     background: rgba(235, 235, 235, .5);
-    border: 1px solid black;">
+	text-align:center; display: inline-block;  bottom: 20; position:absolute;width: 40%;">
   <h2 style="text-shadow: -1px 0 #097fd7, 0 1px #097fd7, 1px 0 #097fd7, 0 -1px #097fd7;"><font color="white">Sander's Wants You!</font></h2>
   <form role="form" action="signup" method="post">
   {% csrf_token %}
+    <div class="form-group; ">
+<input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter Mobile Phone #" style="background-color: rgba(255,255,255,0.1);border:0; border-bottom: 3px solid #fff;">
+    </div>
+    <br>
     <div class="form-group">
-      <label for="phone" style="text-shadow: -1px 0 #097fd7, 0 1px #097fd7, 1px 0 #097fd7, 0 -1px #097fd7;"><font color="white">Email:</font></label>
-      <input type="phone" name="phone" class="form-control" id="phone" placeholder="Enter Mobile Phone #">
+<input  type="number" min="0"  data-bind="value:replyNumber" name="zip_code" class="form-control" id="zip_code" placeholder="Enter Primary Zip Code" style="background-color: rgba(255,255,255,0.1);border:0; border-bottom: 3px solid #fff;">
     </div>
     <div class="form-group">
-      <label for="zip_code" style="text-shadow: -1px 0 #097fd7, 0 1px #097fd7, 1px 0 #097fd7, 0 -1px #097fd7;"><font color="white">Zip Code</font></label>
-      <input  type="number" min="0" step="1" data-bind="value:replyNumber" name="zip_code" class="form-control" id="zip_code" placeholder="Enter Primary Zip Code">
-    </div>
-    <div class="form-group">
-      <label for="carrier" style="text-shadow: -1px 0 #097fd7, 0 1px #097fd7, 1px 0 #097fd7, 0 -1px #097fd7;"><font color="white">Cell Carrier</font></label>
-      <input type="text" name="carrier" class="form-control" id="carrier" placeholder="Enter Phone Carrier">
+    <select name="carrier" class="form-control" id="carrier" placeholder="Enter Phone Carrier" style="background-color: rgba(255,255,255,0.4);border:0; border-bottom: 3px solid #fff;">
+  <option value="AT&T" ><p style="color:#FF00p bo55;">AT&T</option>
+  <option value="Boost">Verizon</option>
+  <option value="Cricket">Verizon</option>
+  <option value="Metro PCS">Verizon</option>
+  <option value="Sprint">Sprint</option>
+  <option value="T-Mobile">T-Mobile</option>
+  <option value="US Cellular">US Cellular</option>
+  <option value="Virgin Mobile">Virgin Mobile</option>
+  <option value="Verizon">Verizon</option>
+</select>
     </div>
 
-    <button type="submit" class="btn btn-danger">Enlist</button>
+    <button type="submit" class="btn btn-danger" >Enlist</button>
   </form>
 </div>
     </body>
